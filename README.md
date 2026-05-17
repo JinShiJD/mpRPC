@@ -1,6 +1,6 @@
 > **基于 muduo + Protobuf + ZooKeeper 的 C++ 分布式 RPC 框架**
 >
-> **平台工具**：Linux（Ubuntu/CentOS）、VSCode 远程开发、CMake 构建系统、GDB 调试、Shell 自动化编译脚本（autobuild.sh）
+> **平台工具**：Linux（Ubuntu）、VSCode 远程开发、CMake 构建系统、GDB 调试、Shell 自动化编译脚本（autobuild.sh）
 >
 > **项目内容**：
 >

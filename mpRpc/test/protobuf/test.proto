@@ -1,0 +1,67 @@
+syntax = "proto3";  // 声明probuf版本
+
+package fixbug;     // 声明代码所在的包(对c++来说是 namesapce)
+
+// 定义下面的选项，表示生成service服务类和rpc方法描述,默认不生成
+option cc_generic_services = true;
+
+
+message ResultCode 
+{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+// 登录请求消息类型 name pwd
+message LoginRequest 
+{
+    // string name = 1; // 表示第一个字段
+    // string pwd = 2;
+
+    // 多字节存储一般定义为bytes
+    bytes name = 1; // 表示第一个字段
+    bytes pwd = 2;
+}
+
+// 定义响应消息类型
+message LoginResponse 
+{
+    // int32 errcode = 1;
+    // //string errmsg = 2;
+    // bytes errmsg = 2;
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+
+message GetFriendListsRequest
+{
+    uint32 userid = 1;
+}
+
+message User 
+{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Sex
+    {
+        MAN = 0;
+        WOMAN = 1;
+    }
+    Sex sex = 3;
+}
+
+message GetFriendListsResponse
+{
+    ResultCode result = 1;
+    repeated User friend_list = 2; // 定义的一个列表类型
+}
+
+// rpc服务
+service UserServiceRpc 
+{
+    // 登录
+    rpc Login(LoginRequest) returns(LoginResponse);
+    // 获取
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
+} 

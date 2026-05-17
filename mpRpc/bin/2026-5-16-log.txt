@@ -1,0 +1,4 @@
+23:50:42 => [error]the first log message!
+23:50:42 => [error]/home/gem/codeFiles/mpRpc/example/callee/friendservice.cc:main:45
+23:50:42 => [info]service_name: FriendServiceRpc
+23:50:42 => [info]method_name: GetFriendsList

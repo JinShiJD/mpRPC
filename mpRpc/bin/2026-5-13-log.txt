@@ -1,0 +1,2 @@
+4:41:2 => the first log message!
+4:41:2 => /home/gem/codeFiles/mpRpc/example/callee/friendservice.cc:main:45
